@@ -1,0 +1,200 @@
+body {
+  background: #fdf8f3;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Georgia', serif;
+  color: #222;
+}
+
+.app {
+  max-width: 600px;
+  margin: 2.5rem auto;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subheader {
+  font-size: 1.15rem;
+  text-align: center;
+  margin: 1.5rem auto 2.5rem auto;
+  max-width: 600px;
+  font-family: 'Georgia', serif;
+  color: #222;
+}
+
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin-top: 2rem;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  color: #222;
+}
+
+.word-pair-display {
+  margin: 0 0 1.2rem 0;
+}
+
+.word-pair-display h2 {
+  background: none;
+  color: #222;
+  font-size: 2rem;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+}
+
+.word-pair-display button {
+  margin-top: 0.5rem;
+}
+
+.writing-input {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.writing-input textarea {
+  width: 100%;
+  min-width: 220px;
+  max-width: 400px;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  font-family: inherit;
+  resize: vertical;
+  background: #faf8f6;
+  color: #222;
+  transition: border 0.2s;
+}
+.writing-input textarea:focus {
+  outline: none;
+  border: 1.5px solid #222;
+}
+.writing-input textarea::placeholder {
+  color: #bbb;
+}
+
+.button {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled) {
+  background: #333;
+}
+
+.writing-input button {
+  padding: 0.9rem 2.2rem;
+  font-size: 1.15rem;
+  border-radius: 12px;
+  font-weight: bold;
+  background: #111;
+  color: #fff;
+  margin-bottom: 0;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.writing-input button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.writing-input button:hover:not(:disabled) {
+  background: #333;
+}
+
+.chat-history {
+  text-align: left;
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(30,42,60,0.06);
+  padding: 2rem 2rem 1.2rem 2rem;
+}
+
+.chat-history h3 {
+  color: #222;
+  font-family: 'Georgia', serif;
+  font-size: 1.18rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.chat-history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chat-entry {
+  margin-bottom: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chat-word-pair {
+  background: #f3ede7;
+  color: #222;
+  padding: 0.3rem 0.9rem;
+  border-radius: 7px;
+  font-size: 1.04rem;
+  font-family: 'Georgia', serif;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.chat-user-response {
+  background: #f7fafd;
+  color: #37474f;
+  padding: 0.7rem 1.1rem;
+  border-radius: 7px 18px 18px 7px;
+  font-size: 1.08rem;
+  box-shadow: 0 1px 4px rgba(60, 80, 120, 0.06);
+  margin-left: 0.7rem;
+  font-family: 'Georgia', serif;
+}
