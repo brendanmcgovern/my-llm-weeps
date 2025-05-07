@@ -172,9 +172,27 @@ body {
 
 .chat-entry {
   margin-bottom: 1.3rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #eee;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.chat-entry-number {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: #b59d6a;
+  font-size: 1.08em;
+  letter-spacing: 0.01em;
+}
+
+.chat-entry-timestamp {
+  font-family: 'Georgia', serif;
+  color: #888;
+  font-size: 0.98em;
+  margin-left: 0.7em;
+  letter-spacing: 0.01em;
 }
 
 .chat-word-pair {
@@ -197,4 +215,26 @@ body {
   box-shadow: 0 1px 4px rgba(60, 80, 120, 0.06);
   margin-left: 0.7rem;
   font-family: 'Georgia', serif;
+}
+
+.analysis-result {
+  margin-top: 1.2rem;
+  background: #f3ede7;
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  font-family: 'Georgia', serif;
+  color: #222;
+  border: 1px solid #e0ded6;
+  box-shadow: 0 2px 8px rgba(30,42,60,0.05);
+}
+
+.analysis-result-spaced {
+  margin-bottom: 2.2rem;
+}
+
+.analysis-result-paragraph {
+  margin: 0 0 1.1em 0;
+  line-height: 1.6;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
 }

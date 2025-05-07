@@ -9,6 +9,8 @@ function App() {
   const [words, setWords] = useState(['gently', 'weeps']);
   const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState([]);
+  const [analysisResult, setAnalysisResult] = useState('');
+  const [analyzing, setAnalyzing] = useState(false);
 
   const getNewWords = async () => {
     setLoading(true);
@@ -24,10 +26,24 @@ function App() {
 
   const handleSubmit = (response) => {
     setHistory([
-      { words, response },
+      { words, response, timestamp: new Date().toISOString() },
       ...history,
     ]);
     getNewWords();
+  };
+
+  const handleAnalyze = async () => {
+    setAnalyzing(true);
+    setAnalysisResult('');
+    try {
+      const lastFive = history.slice(0, 5).map(entry => entry.response);
+      const res = await axios.post('http://localhost:5001/api/analyze', { responses: lastFive });
+      setAnalysisResult(res.data.analysis || 'No analysis returned.');
+    } catch (err) {
+      setAnalysisResult('Error analyzing writing.');
+    } finally {
+      setAnalyzing(false);
+    }
   };
 
   return (
@@ -39,7 +55,12 @@ function App() {
         <WordPairDisplay words={words} onGetNewWords={getNewWords} loading={loading} />
         <WritingInput onSubmit={handleSubmit} disabled={loading} />
       </div>
-      <ChatHistory history={history} />
+      <ChatHistory
+        history={history}
+        onAnalyze={handleAnalyze}
+        analysisResult={analysisResult}
+        analyzing={analyzing}
+      />
     </div>
   );
 }
