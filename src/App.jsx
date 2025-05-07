@@ -15,7 +15,7 @@ function App() {
   const getNewWords = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5001/api/words');
+      const response = await axios.post('https://my-llm-weeps.onrender.com/api/words');
       setWords(response.data.words);
     } catch (error) {
       console.error('Error:', error);
@@ -37,7 +37,7 @@ function App() {
     setAnalysisResult('');
     try {
       const lastFive = history.slice(0, 5).map(entry => entry.response);
-      const res = await axios.post('http://localhost:5001/api/analyze', { responses: lastFive });
+      const res = await axios.post('https://my-llm-weeps.onrender.com/api/analyze', { responses: lastFive });
       setAnalysisResult(res.data.analysis || 'No analysis returned.');
     } catch (err) {
       setAnalysisResult('Error analyzing writing.');
